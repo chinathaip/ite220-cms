@@ -1,20 +1,8 @@
-<!doctype html>
-
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>GBI Staff Area</title>
-    <link rel="stylesheet" href="../stylesheets/staff.css">
-</head>
-
-<body>
-<header>
-    <h1>GBI Staff Area</h1>
-</header>
-
-<ul>
-    <li><a href="index.php">Menu</a></li>
-</ul>
+<?php
+require_once('../../private/initialize.php');
+$page_title = "Subjects";
+include_once(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
 </div>
+<?php include_once(SHARED_PATH . '/staff_footer.php'); ?>
