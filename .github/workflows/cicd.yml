@@ -65,9 +65,9 @@ jobs:
           git add k8s-ite220-cms/deployment.yml
           git commit -m "🤖 change docker image version to ${GITHUB_SHA}"
       # line 87:
-      # open the kube-gitios/deployment.yml file in the 'devops-argocd' repo(tutorial),
+      # open the k8s-ite220-cms/deployment.yml file in the 'devops-argocd' repo(tutorial),
       # try to change the value of 'image' inside this file
-      # by searching for regular expression: find any line that has a pattern of ghcr.io/aorjoa-training/devops-go-example
+      # by searching for regular expression: find any line that has a pattern of ghcr.io/chinathaip/ite220-cms
       - name: push changes
         uses: ad-m/github-push-action@master
         with:

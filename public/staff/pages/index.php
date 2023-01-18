@@ -5,7 +5,7 @@ require_once(SHARED_PATH . '/Page.php');
 $pages = [
     new Page(1, 1, "Yo", 1, 1, "content inside Yo"),
     new Page(2, 2, "Yee", 2, 1, "content inside Yee"),
-    new Page(3, 3, "Ha", 3, 1, "content inside Ha"),
+    new Page(3, 3, "Ha", 3, 1, "content inside HaHEEEEE"),
     new Page(4, 4, "Woooo", 4, 1, "content inside Wooo"),
 ];
 
