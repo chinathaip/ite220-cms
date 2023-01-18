@@ -6,12 +6,8 @@ ini_set('display_errors', 1);
 <head>
     <meta charset="utf-8">
     <?php
-    if (isset($page_title)) {
-        echo "<title>" . $page_title . "</title>";
-    } else {
-        echo "<title>Staff Area</title>";
-    }
-    ?>
+    $page_title = $page_title ?? 'Staff Area';
+    echo "<title>" . $page_title . "</title>"; ?>
     <link rel="stylesheet" href=<?php echo url_for('/stylesheets/staff.css'); ?>>
 </head>
 
