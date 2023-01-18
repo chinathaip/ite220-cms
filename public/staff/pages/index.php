@@ -41,7 +41,8 @@ include_once(SHARED_PATH . '/staff_header.php'); ?>
                         <td><?php echo $page->visible ?></td>
                         <td><?php echo $page->content ?></td>
                         <td><a class="action"
-                               href="<?php echo url_for('/staff/pages/show.php?id=' . $page->id) ?>">View</a></td>
+                               href="<?php echo url_for('/staff/pages/show.php?id=' . encode($page->id)) ?>">View</a>
+                        </td>
                         <td><a class=" action" href=''>Edit</a></td>
                         <td><a class="action" href=''>Delete</a></td>
                     </tr>
