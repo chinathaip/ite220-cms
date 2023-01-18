@@ -46,31 +46,31 @@ jobs:
   # ==============
   # CD task - access the repo that has kubernetes config files, and change the pods' container image
   # ==============
-#  gitops-versioning:
-#    runs-on: ubuntu-latest
-#    needs: build-and-push-docker-image
-#    steps:
-#      - name: checkout
-#        uses: actions/checkout@v2
-#        with:
-#          repository: chinathaip/deployargo
-#          persist-credentials: false
-#          fetch-depth: 0
-#      - name: change image tag
-#        run: |
-#          git --version
-#          git config user.name "chinathaip"
-#          git config user.email "cartoonabe@gmail.com"
-#          sed -i -E "s/ghcr.io\/chinathaip\/testargocd.*$/ghcr.io\/chinathaip\/testargocd:${GITHUB_SHA}/" k8s/deployment.yml
-#          git add k8s/deployment.yml
-#          git commit -m "🤖 change docker image version to ${GITHUB_SHA}"
-#      # line 87:
-#      # open the kube-gitios/deployment.yml file in the 'devops-argocd' repo(tutorial),
-#      # try to change the value of 'image' inside this file
-#      # by searching for regular expression: find any line that has a pattern of ghcr.io/aorjoa-training/devops-go-example
-#      - name: push changes
-#        uses: ad-m/github-push-action@master
-#        with:
-#          github_token: ${{ secrets.PAT }}
-#          repository: chinathaip/deployargo
-#          branch: main
+  gitops-versioning:
+    runs-on: ubuntu-latest
+    needs: build-and-push-docker-image
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          repository: chinathaip/deployargo
+          persist-credentials: false
+          fetch-depth: 0
+      - name: change image tag
+        run: |
+          git --version
+          git config user.name "chinathaip"
+          git config user.email "cartoonabe@gmail.com"
+          sed -i -E "s/ghcr.io\/chinathaip\/ite220-cms.*$/ghcr.io\/chinathaip\/ite220-cms:${GITHUB_SHA}/" k8s-ite220-cms/deployment.yml
+          git add k8s/deployment.yml
+          git commit -m "🤖 change docker image version to ${GITHUB_SHA}"
+      # line 87:
+      # open the kube-gitios/deployment.yml file in the 'devops-argocd' repo(tutorial),
+      # try to change the value of 'image' inside this file
+      # by searching for regular expression: find any line that has a pattern of ghcr.io/aorjoa-training/devops-go-example
+      - name: push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.PAT }}
+          repository: chinathaip/deployargo
+          branch: main
