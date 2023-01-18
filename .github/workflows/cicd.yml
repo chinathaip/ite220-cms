@@ -58,7 +58,7 @@ jobs:
           fetch-depth: 0
       - name: change image tag
         run: |
-          git --version
+          git --version 
           git config user.name "chinathaip"
           git config user.email "cartoonabe@gmail.com"
           sed -i -E "s/ghcr.io\/chinathaip\/ite220-cms.*$/ghcr.io\/chinathaip\/ite220-cms:${GITHUB_SHA}/" k8s-ite220-cms/deployment.yml
