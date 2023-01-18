@@ -62,7 +62,7 @@ jobs:
           git config user.name "chinathaip"
           git config user.email "cartoonabe@gmail.com"
           sed -i -E "s/ghcr.io\/chinathaip\/ite220-cms.*$/ghcr.io\/chinathaip\/ite220-cms:${GITHUB_SHA}/" k8s-ite220-cms/deployment.yml
-          git add k8s/deployment.yml
+          git add k8s-ite220-cms/deployment.yml
           git commit -m "🤖 change docker image version to ${GITHUB_SHA}"
       # line 87:
       # open the kube-gitios/deployment.yml file in the 'devops-argocd' repo(tutorial),
