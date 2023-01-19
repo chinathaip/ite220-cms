@@ -38,7 +38,7 @@ include_once(SHARED_PATH . '/staff_header.php'); ?>
                         <td><?php echo $page->subjectId ?></td>
                         <td><?php echo $page->menuName ?></td>
                         <td><?php echo $page->position ?></td>
-                        <td><?php echo $page->visible ?></td>
+                        <td><?php echo $page->visible == 1 ? 'true' : 'false' ?></td>
                         <td><?php echo $page->content ?></td>
                         <td><a class="action"
                                href="<?php echo url_for('/staff/pages/show.php?id=' . encode($page->id)) ?>">View</a>

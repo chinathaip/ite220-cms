@@ -2,7 +2,7 @@ name: CI and CD
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
 
 jobs:
@@ -64,9 +64,8 @@ jobs:
           sed -i -E "s/ghcr.io\/chinathaip\/ite220-cms.*$/ghcr.io\/chinathaip\/ite220-cms:${GITHUB_SHA}/" k8s-ite220-cms/deployment.yml
           git add k8s-ite220-cms/deployment.yml
           git commit -m "🤖 change docker image version to ${GITHUB_SHA}"
-      # line 87:
-      # open the k8s-ite220-cms/deployment.yml file in the 'devops-argocd' repo(tutorial),
-      # try to change the value of 'image' inside this file
+      # open the k8s-ite220-cms/deployment.yml file in the 'chinathaip/deployargo' repository,
+      # try to change the value of the docker image inside this file
       # by searching for regular expression: find any line that has a pattern of ghcr.io/chinathaip/ite220-cms
       - name: push changes
         uses: ad-m/github-push-action@master
