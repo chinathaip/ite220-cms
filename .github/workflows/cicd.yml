@@ -62,7 +62,7 @@ jobs:
           git config user.name "chinathai bot"
           git config user.email "bot@gmail.com"
           sed -i -E "s/ghcr.io\/chinathaip\/ite220-cms.*$/ghcr.io\/chinathaip\/ite220-cms:${GITHUB_SHA}/" k8s-microservices/deployment.yml
-          git add k8s-ite220-cms/deployment.yml
+          git add k8s-microservices/deployment.yml
           git commit -m "🤖 change docker image version to ${GITHUB_SHA}"
       # open the k8s-ite220-cms/deployment.yml file in the 'chinathaip/deployargo' repository,
       # try to change the value of the docker image inside this file
